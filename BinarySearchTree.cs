@@ -28,6 +28,7 @@ namespace BinarySearchTree
             if ((currentNodeValue.CompareTo(item)) > 0)
             {
                 if (this.LeftTree == null)
+
                 {
                     this.LeftTree = new BinarySearchTree<T>(item);
                 }
