@@ -23,6 +23,11 @@ namespace BinarySearchTree
             obj1.Insert(67);
             obj1.Display();
             obj1.GetSize();
+<<<<<<< HEAD
+            bool result = obj1.IFExists(63, obj1);
+            Console.WriteLine(result);
+=======
+>>>>>>> 3440461fb274d3b05c09c5d7b6fda509f49f43d7
             Console.ReadLine();
         }
     }

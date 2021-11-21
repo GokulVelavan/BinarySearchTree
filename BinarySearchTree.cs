@@ -25,9 +25,10 @@ namespace BinarySearchTree
             T currentNodeValue = this.NodeData; //creation of new node
 
 
-            if ((currentNodeValue.CompareTo(item)) > 0) 
+            if ((currentNodeValue.CompareTo(item)) > 0)
             {
-                if (this.LeftTree == null) 
+                if (this.LeftTree == null)
+
                 {
                     this.LeftTree = new BinarySearchTree<T>(item);
                 }
@@ -67,6 +68,35 @@ namespace BinarySearchTree
         public void GetSize()
         {
             Console.WriteLine("\nSize" + " " + (1 + this.leftCount + this.rightCount));
+        }
+
+        public bool IFExists(T element, BinarySearchTree<T> Node)
+        {
+            if (Node == null) 
+            {
+                return false;//returing first node is null
+            }
+
+            if (Node.NodeData.Equals(element)) 
+            {
+                Console.WriteLine("\nFound Element in BST" + "" + Node.NodeData);
+                return true; ///return true after find
+            }
+            else
+            {
+                Console.WriteLine("\nCurrent Element is {0} in BST", Node.NodeData);
+            }
+
+            if (element.CompareTo(Node.NodeData) < 0) 
+            {
+                IFExists(element, Node.LeftTree); //recrusion function
+            }
+
+            if (element.CompareTo(Node.NodeData) > 0) 
+            {
+                IFExists(element, Node.RightTree); //recrusion function
+            }
+            return result;
         }
 
     }
