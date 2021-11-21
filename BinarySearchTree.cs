@@ -6,14 +6,15 @@ namespace BinarySearchTree
 {
     class BinarySearchTree<T> where T : IComparable<T>
     {
-        public T NodeData { get; set; } 
-        public BinarySearchTree<T> LeftTree { get; set; } 
+        public T NodeData { get; set; }
+        public BinarySearchTree<T> LeftTree { get; set; }
         public BinarySearchTree<T> RightTree { get; set; }
         public BinarySearchTree(T nodeData)  // constructor 
         {
-            this.NodeData = nodeData; 
-            this.LeftTree = null; 
-            this.RightTree = null; 
+            this.NodeData = nodeData;
+            this.LeftTree = null;
+            this.RightTree = null;
+
         }
 
         int leftCount = 0, rightCount = 0;
@@ -22,6 +23,7 @@ namespace BinarySearchTree
         public void Insert(T item)
         {
             T currentNodeValue = this.NodeData; //creation of new node
+
 
             if ((currentNodeValue.CompareTo(item)) > 0) 
             {
@@ -34,7 +36,8 @@ namespace BinarySearchTree
             }
             else
             {
-                if (this.RightTree == null) 
+                if (this.RightTree == null)
+
                 {
                     this.RightTree = new BinarySearchTree<T>(item);
                 }
@@ -47,16 +50,24 @@ namespace BinarySearchTree
         {
             if (this.LeftTree != null)
             {
-                this.leftCount++; 
-                this.LeftTree.Display(); 
+
+                this.leftCount++;
+                this.LeftTree.Display();
+
             }
             Console.WriteLine(this.NodeData.ToString());
 
             if (this.RightTree != null)
             {
                 this.rightCount++;
-                this.RightTree.Display(); 
+                this.RightTree.Display();
             }
         }
+
+        public void GetSize()
+        {
+            Console.WriteLine("\nSize" + " " + (1 + this.leftCount + this.rightCount));
+        }
+
     }
 }
