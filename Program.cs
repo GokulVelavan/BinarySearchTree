@@ -23,16 +23,6 @@ namespace BinarySearchTree
             obj1.Insert(67);
             obj1.Display();
             obj1.GetSize();
-
-
-
-
-
-
-
-
-
-
             Console.ReadLine();
         }
     }

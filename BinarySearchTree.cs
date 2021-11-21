@@ -14,6 +14,7 @@ namespace BinarySearchTree
             this.NodeData = nodeData;
             this.LeftTree = null;
             this.RightTree = null;
+
         }
 
         int leftCount = 0, rightCount = 0;
@@ -23,9 +24,10 @@ namespace BinarySearchTree
         {
             T currentNodeValue = this.NodeData; //creation of new node
 
-            if ((currentNodeValue.CompareTo(item)) > 0)
+
+            if ((currentNodeValue.CompareTo(item)) > 0) 
             {
-                if (this.LeftTree == null)
+                if (this.LeftTree == null) 
                 {
                     this.LeftTree = new BinarySearchTree<T>(item);
                 }
@@ -35,6 +37,7 @@ namespace BinarySearchTree
             else
             {
                 if (this.RightTree == null)
+
                 {
                     this.RightTree = new BinarySearchTree<T>(item);
                 }
@@ -47,8 +50,10 @@ namespace BinarySearchTree
         {
             if (this.LeftTree != null)
             {
+
                 this.leftCount++;
                 this.LeftTree.Display();
+
             }
             Console.WriteLine(this.NodeData.ToString());
 
@@ -63,5 +68,6 @@ namespace BinarySearchTree
         {
             Console.WriteLine("\nSize" + " " + (1 + this.leftCount + this.rightCount));
         }
+
     }
 }
